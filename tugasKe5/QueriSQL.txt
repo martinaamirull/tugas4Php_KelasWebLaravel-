@@ -1,0 +1,30 @@
+1. CREATE DATABASE `myshop` CHARACTER SET 'utf8mb4';
+
+2. 
+->users:
+CREATE TABLE `users` (`id` int(11) NOT NULL AUTO_INCREMENT,`name` varchar(255) DEFAULT NULL, `email` varchar(255) DEFAULT NULL,`password` varchar(255) DEFAULT NULL,  PRIMARY KEY (`id`));
+
+-> categories`:
+CREATE TABLE `myshop`.`categories`  (`id` int(0) NOT NULL AUTO_INCREMENT,`name` varchar(255) NULL,PRIMARY KEY (`id`));
+
+-> items:
+CREATE TABLE `myshop`.`items`  (`id` int(0) NOT NULL AUTO_INCREMENT,`name` varchar(255) NULL,`description` varchar(255) NULL,  `price` int(8) NULL,`stock` int(8) NULL,category_id` int(8) NULL,PRIMARY KEY (`id`),CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `myshop`.`categories` (`id`)
+);
+
+
+3. 
+-> insert users:
+INSERT INTO `users` VALUES (1, 'john doe', 'john@doe.com', 'john123');
+INSERT INTO `users` VALUES (2, 'jani doe', 'jane@doe.com', 'jenita123');
+
+-> insert categories:
+INSERT INTO `categories` VALUES (1, 'gadget');
+INSERT INTO `categories` VALUES (2, 'cloth');
+INSERT INTO `categories` VALUES (3, 'men');
+INSERT INTO `categories` VALUES (4, 'women');
+INSERT INTO `categories` VALUES (5, 'branded');
+
+-> insert items:
+INSERT INTO `items` VALUES (1, 'Sumsang b50', '	hape keren dari merek sumsang', 4000000, 100, 1);
+INSERT INTO `items` VALUES (2, 'Uniklooh', '	baju keren dari brand ternama', 500000, 50, 2);
+INSERT INTO `items` VALUES (3, 'IMHO Watch', 'jam tangan anak yang jujur banget', 2000000, 10, 1);
