@@ -28,3 +28,17 @@ INSERT INTO `categories` VALUES (5, 'branded');
 INSERT INTO `items` VALUES (1, 'Sumsang b50', '	hape keren dari merek sumsang', 4000000, 100, 1);
 INSERT INTO `items` VALUES (2, 'Uniklooh', '	baju keren dari brand ternama', 500000, 50, 2);
 INSERT INTO `items` VALUES (3, 'IMHO Watch', 'jam tangan anak yang jujur banget', 2000000, 10, 1);
+
+4. 
+-> A :
+select id,name,email from users;
+
+-> B:
+select * from items where price>=1000000;
+select * from items where name like '%uniklo%';
+
+-> c:
+select items.`name`,items.description,items.price,items.stock,items.category_id,categories.`name` as kategori from items INNER JOIN categories on items.category_id =categories.id;
+
+5.  update items set price=2500000 where `name`='Sumsang b50';
+
